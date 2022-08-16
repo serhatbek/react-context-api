@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-context-api/static/css/main.32db406d.css",
+    "main.js": "/react-context-api/static/js/main.a5ebc65a.js",
+    "index.html": "/react-context-api/index.html",
+    "main.32db406d.css.map": "/react-context-api/static/css/main.32db406d.css.map",
+    "main.a5ebc65a.js.map": "/react-context-api/static/js/main.a5ebc65a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32db406d.css",
+    "static/js/main.a5ebc65a.js"
+  ]
+}
