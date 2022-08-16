@@ -1,15 +1,8 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { CounterContext } from '../context/CounterContext';
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  const incCount = () => {
-    setCount((prev) => prev + 1);
-  };
-
-  const decCount = () => {
-    setCount((prev) => (prev > 0 ? prev - 1 : 0));
-  };
+  const { count, incCount, decCount } = useContext(CounterContext);
 
   return (
     <div>
