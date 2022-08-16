@@ -1,23 +1,16 @@
 import { useUsers } from '../context/UserContext';
+import UserCard from './UserCard';
 
 const ComponentA = () => {
   const { users } = useUsers();
-  console.log(users);
 
   return (
-    <div style={{ backgroundColor: 'green' }}>
-      <h3>ComponentA</h3>
-      {/* <p>{gender}</p>
-      <p>{name}</p>
-      <p>{email}</p> */}
+    <div className='a' style={{ backgroundColor: 'green' }}>
+      <h3>ComponentA Users</h3>
 
-      {/* {users.map((user, index) => (
-        <div key={index}>
-          <p>{user.name}</p>
-          <p>{user.gender}</p>
-          <p>{user.email}</p>
-        </div>
-      ))} */}
+      {users
+        ? users.map((user, index) => <UserCard user={user} key={index} />)
+        : 'Loaading'}
     </div>
   );
 };

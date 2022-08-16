@@ -5,14 +5,14 @@ import axios from 'axios';
 const UsersContext = createContext();
 export const useUsers = () => useContext(UsersContext);
 
-const UsersContextProvider = (props) => {
-  const [users, setUsers] = useState([]);
+const UsersContextProvider = ({ children }) => {
+  const [users, setUsers] = useState();
 
-  const apiUrl = 'https://randomuser.me/api/?results=10';
+  const apiUrl = 'https://randomuser.me/api/?results=5';
 
   const userData = async () => {
     const response = await axios.get(apiUrl);
-    const data = response.data.results;
+    const data = await response.data.results;
     setUsers(data);
   };
 
@@ -25,9 +25,7 @@ const UsersContextProvider = (props) => {
   };
 
   return (
-    <UsersContext.Provider value={values}>
-      {props.children}
-    </UsersContext.Provider>
+    <UsersContext.Provider value={values}>{children}</UsersContext.Provider>
   );
 };
 

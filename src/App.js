@@ -9,7 +9,10 @@ function App() {
   return (
     <CounterContextProvider>
       <UsersContextProvider>
-        <div className='App'>
+        <div
+          className='App'
+          style={{ backgroundColor: '#181818', height: '100vh' }}
+        >
           <Counter />
           <ComponentA />
           <ComponentB />
