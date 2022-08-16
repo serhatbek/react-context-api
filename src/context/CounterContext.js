@@ -1,6 +1,7 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 
-export const CounterContext = createContext();
+const CounterContext = createContext();
+export const useCounter = () => useContext(CounterContext);
 
 const CounterContextProvider = (props) => {
   const [count, setCount] = useState(0);
@@ -23,3 +24,14 @@ const CounterContextProvider = (props) => {
 };
 
 export default CounterContextProvider;
+
+/**
+ * * [createContext] kullanarak istediğimiz isimde bir context tanımlıyoruz.
+ * * Daha sonra bu contexti kullanabilmek için aynı isimde bir {isim}Provider fonksiyonu kuruyoruz.
+ * * [useState] hook u kullanarak bu bu providerın dışa taşımasını istediğimiz verileri tanımlıyoruz.
+ * * Provider ı return etmeden önce value olarak verilerini tekrar tanımlıyoruz.
+ * * return içerisinde Provider'a value ve props ataması yapıyoruz.
+ * ? Kullanabilmek için oluşturduğumuz contexti, ve providerını export ediyoruz.
+ * !
+ * >
+ */

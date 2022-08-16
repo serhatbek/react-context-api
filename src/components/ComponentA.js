@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import { CounterContext } from '../context/CounterContext';
+import { useCounter } from '../context/CounterContext';
 
 const ComponentA = () => {
-  const { count } = useContext(CounterContext);
+  const { count } = useCounter();
   return (
-    <div>
+    <div style={{ backgroundColor: 'green' }}>
       <h3>ComponentA</h3>
       <p>Count is : {count}</p>
     </div>

@@ -1,7 +1,13 @@
-import React from 'react';
+import { useCounter } from '../context/CounterContext';
 
 const ComponentB = () => {
-  return <div>ComponentB</div>;
+  const { incCount } = useCounter();
+  return (
+    <div style={{ backgroundColor: 'red' }}>
+      <h3>ComponentB</h3>
+      <button onClick={incCount}>Increase Count</button>
+    </div>
+  );
 };
 
 export default ComponentB;
